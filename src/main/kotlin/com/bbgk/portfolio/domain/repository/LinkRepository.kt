@@ -1,0 +1,6 @@
+package com.bbgk.portfolio.domain.repository
+
+import com.bbgk.portfolio.domain.entity.Link
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface LinkRepository : JpaRepository<Link, Long>
