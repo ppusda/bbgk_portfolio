@@ -49,13 +49,13 @@ class DataInitializer(
 
         // introduction 초기화
         val introductions = mutableListOf<Introduction>(
-                Introduction(content = "사용자를 위해 개발하며 함께 성장해나가는 개발자, 조동국 입니다.", isActive = true),
-                Introduction(content = "만드는 것과 성취감을 얻는 것을 좋아해서 개발을 시작하게 되었습니다.", isActive = true),
-                Introduction(content = "공부하는 과정에서 아두이노, 앱, 웹 등 다양한 분야에서 서비스를 만들어 보면서", isActive = true),
-                Introduction(content = "개발뿐만이 아닌 사용자, 기획, 디자인 등 다양한 관점에서 생각하는 방법을 배웠습니다.", isActive = true),
-                Introduction(content = "사용자에게 편리한 서비스를 지향하며, 어떤 문제든 도전하는 것을 좋아합니다.", isActive = true),
-                Introduction(content = "도전하며 항상 배울 수 있다고 생각하고 그 과정에서 배운 것들을 공유하는 것을 즐깁니다.", isActive = true),
-                Introduction(content = "사용자를 위한 서비스를 고민하고 개선해 나가며 동료들과 소통하며 문제를 해결해 나가는 개발자가 되고 싶습니다.", isActive = true)
+                Introduction(content = "사용자가 만족할 수 있는 서비스를 지향하며 개발합니다.", isActive = true),
+                Introduction(content = "사용자 관점으로 생각하며 개발하고 더 개선해갈 수 있도록 고민합니다.", isActive = true),
+                Introduction(content = "어떤 문제든 도전하고, 항상 배울 수 있다고 생각합니다.", isActive = true),
+                Introduction(content = "도전 정신과 배우려는 자세를 통해 빠르게 학습하고 적응해 나갈 수 있습니다.", isActive = true),
+                Introduction(content = "꾸준하게 학습하기 위해서 지난 1년반 동안 1일 1커밋을 이어오고 있고,", isActive = true),
+                Introduction(content = "스터디와 컨퍼런스 등 다양한 활동에 참여하며 성장해오고 있습니다.", isActive = true),
+                Introduction(content = "또한, 함께 성장해 나갈 수 있도록 학습한 내용을 약 100개 이상의 글로 작성하고 공유했습니다.", isActive = true)
         )
         introductionRepository.saveAll(introductions)
 
@@ -103,7 +103,7 @@ class DataInitializer(
         val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
         val python = Skill(name = "Python", type = SkillType.LANGUAGE.name, isActive = true)
         val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
-        val nestjs = Skill(name = "Nest.js (React)", type = SkillType.FRAMEWORK.name, isActive = true)
+        val nextjs = Skill(name = "Next.js (React)", type = SkillType.FRAMEWORK.name, isActive = true)
         val vuejs = Skill(name = "Vue.js", type = SkillType.FRAMEWORK.name, isActive = true)
         val mysql = Skill(name = "MySQL", type = SkillType.DATABASE.name, isActive = true)
         val oracle = Skill(name = "Oracle", type = SkillType.DATABASE.name, isActive = true)
@@ -114,7 +114,7 @@ class DataInitializer(
         val ncp = Skill(name = "NCP", type = SkillType.TOOL.name, isActive = true)
         val linux = Skill(name = "Linux", type = SkillType.TOOL.name, isActive = true)
 
-        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, mysql, oracle, redis, jpa, docker, aws, ncp, linux))
+        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, mysql, oracle, redis, jpa, docker, aws, ncp, linux, nextjs, vuejs))
 
         // project / project_detail / project_skill 초기화
         val project1 = Project(
@@ -128,9 +128,9 @@ class DataInitializer(
         )
         project1.addDetails(
                 mutableListOf(
-                        ProjectDetail(content = "웹 크롤링에 적합한 Python과 Selenium, BS4를 활용하여 데이터 수집", url = null, isActive = true),
+                        ProjectDetail(content = "크롤링과 XML 파싱에 적합한 라이브러리를 가지고 있는 Python을 활용하여 데이터 수집", url = null, isActive = true),
                         ProjectDetail(content = "Open API의 경우 데이터 접근이 잦고 쿼리 관리에 한계를 느껴, 쉽고 효율적인 접근을 위해 JPA 활용", url = null, isActive = true),
-                        ProjectDetail(content = "약 800만건의 데이터 수집 및 데이터 정규화 작업 수행", url = null, isActive = true)
+                        ProjectDetail(content = "생물정보팀과 협업하여 약 800만건의 데이터 수집 및 데이터 정규화 작업 수행", url = null, isActive = true)
                 )
         )
         project1.skills.addAll(
@@ -153,8 +153,9 @@ class DataInitializer(
         )
         project2.addDetails(
                 mutableListOf(
-                        ProjectDetail(content = "오픈소스 모니터링 툴을 고려하였으나, 직접 개발하는 쪽이 빠를 것으로 판단하여 직접 개발", url = null, isActive = true),
-                        ProjectDetail(content = "알림 발송을 비동기 처리하여 이미지 분석 - 알림 발송 기능간 의존도 감소", url = null, isActive = true),
+                        ProjectDetail(content = "오픈소스 모니터링 툴 도입을 고려하였으나, 기존 프로그램을 개선하는 쪽이 빠를 것으로 판단하여 Python과 Webhook을 활용하여 메신저에 알림 기능 구현", url = null, isActive = true),
+                        ProjectDetail(content = "서버 문제가 발생하더라도 직접 확인하기 전까지 알 수 없었던 기존 방식을 개선하여 30분 주기로 알림을 전송하도록 개선", url = null, isActive = true),
+                        ProjectDetail(content = "•\t이슈 발생 시 대응 시간 평균 2시간 => 30분으로 약 75% 개선", url = null, isActive = true)
                 )
         )
         project2.skills.addAll(
@@ -191,7 +192,7 @@ class DataInitializer(
                         ProjectSkill(project = project3, skill = java),
                         ProjectSkill(project = project3, skill = spring),
                         ProjectSkill(project = project3, skill = jpa),
-                        ProjectSkill(project = project3, skill = nestjs),
+                        ProjectSkill(project = project3, skill = nextjs),
                         ProjectSkill(project = project3, skill = mysql),
                         ProjectSkill(project = project3, skill = redis),
                         ProjectSkill(project = project3, skill = ncp),
@@ -199,10 +200,8 @@ class DataInitializer(
                 )
         )
 
-        projectRepository.saveAll(mutableListOf(project1, project2, project3))
-
         val project4 = Project(
-                name = "Nyangmunity, 고양이 이미지를 공유하고 고양이 이미지를 제공하는 서비스",
+                name = "Nyangmunity / 고양이 이미지를 공유하고 고양이 이미지를 제공하는 서비스",
                 description = "고양이 사진 공유를 좋아하는 사용자를 위해 사진 공유 커뮤니티와 여러 고양이 사진을 url 형식으로 제공하기 위해 개발",
                 startYear = 2021,
                 startMonth = 7,
