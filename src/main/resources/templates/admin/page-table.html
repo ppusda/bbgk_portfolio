@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<div th:replace="~{admin/fragments/fragment-head :: head}"></div>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{::main})}">
 <body>
-<!-- ======= Header ======= -->
-<div th:replace="~{admin/fragments/fragment-header :: header}"></div>
-<!-- ======= Sidebar ======= -->
-<div th:replace="~{admin/fragments/fragment-sidebar :: sidebar}"></div>
 <main id="main" class="main">
+
   <div class="pagetitle">
     <h1>Data Tables</h1>
     <nav>
@@ -17,13 +13,16 @@
       </ol>
     </nav>
   </div><!-- End Page Title -->
+
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
+
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Datatables</h5>
             <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+
             <!-- Table with stripped rows -->
             <table class="table datatable">
               <thead>
@@ -74,15 +73,14 @@
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
+
           </div>
         </div>
+
       </div>
     </div>
   </section>
+
 </main><!-- End #main -->
-<!-- ======= Footer ======= -->
-<div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
-<div th:replace="~{admin/fragments/fragment-foot :: foot}"></div>
-<div th:replace="~{admin/fragments/fragment-script-util :: util}"></div>
 </body>
 </html>
