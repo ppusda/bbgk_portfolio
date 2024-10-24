@@ -101,10 +101,10 @@ class DataInitializer(
         // skill 초기화
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
         val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
-        val python = Skill(name = "Python", type = SkillType.LANGUAGE.name, isActive = true)
+        val python = Skill(name = "Python", type = SkillType.LANGUAGE.name, isActive = false)
         val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
-        val nextjs = Skill(name = "Next.js (React)", type = SkillType.FRAMEWORK.name, isActive = true)
-        val vuejs = Skill(name = "Vue.js", type = SkillType.FRAMEWORK.name, isActive = true)
+        val nextjs = Skill(name = "Next.js", type = SkillType.FRAMEWORK.name, isActive = false)
+        val vuejs = Skill(name = "Vue.js", type = SkillType.FRAMEWORK.name, isActive = false)
         val mysql = Skill(name = "MySQL", type = SkillType.DATABASE.name, isActive = true)
         val oracle = Skill(name = "Oracle", type = SkillType.DATABASE.name, isActive = true)
         val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
@@ -112,9 +112,8 @@ class DataInitializer(
         val docker = Skill(name = "Docker", type = SkillType.TOOL.name, isActive = true)
         val aws = Skill(name = "AWS", type = SkillType.TOOL.name, isActive = true)
         val ncp = Skill(name = "NCP", type = SkillType.TOOL.name, isActive = true)
-        val linux = Skill(name = "Linux", type = SkillType.TOOL.name, isActive = true)
 
-        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, mysql, oracle, redis, jpa, docker, aws, ncp, linux, nextjs, vuejs))
+        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, mysql, oracle, redis, jpa, docker, aws, ncp, nextjs, vuejs))
 
         // project / project_detail / project_skill 초기화
         val project1 = Project(
@@ -144,7 +143,7 @@ class DataInitializer(
         )
         val project2 = Project(
                 name = "서버 모니터링 프로그램 개발",
-                description = "수정이 어려운 레거시 프로그램의 이슈를 빠르게 파악하여 안정적인 서비스를 제공할 수 있도록 모니터링 기능을 개발",
+                description = "서버 이슈 발생 시 대응 시간을 단축할 수 있도록 기존 모니터링 프로그램을 개선",
                 startYear = 2022,
                 startMonth = 6,
                 endYear = 2022,
@@ -155,7 +154,7 @@ class DataInitializer(
                 mutableListOf(
                         ProjectDetail(content = "오픈소스 모니터링 툴 도입을 고려하였으나, 기존 프로그램을 개선하는 쪽이 빠를 것으로 판단하여 Python과 Webhook을 활용하여 메신저에 알림 기능 구현", url = null, isActive = true),
                         ProjectDetail(content = "서버 문제가 발생하더라도 직접 확인하기 전까지 알 수 없었던 기존 방식을 개선하여 30분 주기로 알림을 전송하도록 개선", url = null, isActive = true),
-                        ProjectDetail(content = "•\t이슈 발생 시 대응 시간 평균 2시간 => 30분으로 약 75% 개선", url = null, isActive = true)
+                        ProjectDetail(content = "이슈 발생 시 대응 시간 평균 2시간 => 30분으로 약 75% 개선", url = null, isActive = true)
                 )
         )
         project2.skills.addAll(
