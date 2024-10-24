@@ -20,7 +20,8 @@ class DataInitializer(
         private val linkRepository: LinkRepository,
         private val skillRepository: SkillRepository,
         private val projectRepository: ProjectRepository,
-        private val experienceRepository: ExperienceRepository
+        private val experienceRepository: ExperienceRepository,
+        private val accountRepository: AccountRepository
 ) {
 
     val log: Logger = LoggerFactory.getLogger(DataInitializer::class.java)
@@ -39,7 +40,7 @@ class DataInitializer(
                 ),
                 Achievement(
                         title = "정보처리산업기사",
-                        description = "자료구조, 운영체제, 알고리즘, 데이터베이스 등",
+                        description = "",
                         host = "한국산업인력공단",
                         achievedDate = LocalDate.of(2020, 11, 12),
                         isActive = true
@@ -229,6 +230,12 @@ class DataInitializer(
         )
 
         projectRepository.saveAll(mutableListOf(project1, project2, project3, project4))
+
+        val account = Account(
+                loginId = "admin",
+                pw = "\$2a\$12\$Vh1q9sxNXWV7ooXp8VS3Luwxpe0CWpu3A/ylAskDlPAttNbgNMBX6"
+        )
+        accountRepository.save(account)
     }
 
 }
