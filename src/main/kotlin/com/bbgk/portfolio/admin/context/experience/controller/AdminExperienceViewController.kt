@@ -47,7 +47,7 @@ class AdminExperienceViewController(
                 Pair("deletable", false),
                 Pair("hasDetails", true)
         )
-        model.addAttribute(pageAttributes)
+        model.addAllAttributes(pageAttributes)
 
         return "admin/page-table"
     }

@@ -39,7 +39,7 @@ class AdminAchievementViewController(
                 Pair("deletable", false),
                 Pair("hasDetails", false)
         ) // Kotlin에서 Map에 데이터를 넣어줄 때 Pair를 사용할 수 있음
-        model.addAttribute(pageAttributes)
+        model.addAllAttributes(pageAttributes)
 
         return "admin/page-table"
     }
