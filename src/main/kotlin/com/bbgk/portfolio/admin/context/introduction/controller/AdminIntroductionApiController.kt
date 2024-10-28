@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/admin/api/introduction")
+@RequestMapping("/admin/api/introductions")
 class AdminIntroductionApiController(
         private val adminIntroductionService: AdminIntroductionService
 ) {

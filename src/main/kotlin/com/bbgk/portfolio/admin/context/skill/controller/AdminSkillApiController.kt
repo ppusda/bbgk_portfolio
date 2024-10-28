@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/admin/api/skill")
+@RequestMapping("/admin/api/skills")
 class AdminSkillApiController(
         private val adminSkillService: AdminSkillService
 ) {
