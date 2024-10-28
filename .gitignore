@@ -41,3 +41,6 @@ out/
 
 ### Docker ###
 docker-compose.yml
+
+### Test ###
+/src/test/kotlin/com/bbgk/portfolio/PortfolioApplicationTests.kt

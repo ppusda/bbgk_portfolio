@@ -57,7 +57,7 @@ class AdminProjectSkillService(
     fun save(form: ProjectSkillForm) {
         val projectId = parseId(form.project)
         val skillId = parseId(form.skill)
-        projectSkillRepository.findAllByProjectIdAndSkillId(projectId, skillId)
+        projectSkillRepository.findByProjectIdAndSkillId(projectId, skillId)
                 .ifPresent { throw AdminBadRequestException("이미 매핑된 데이터입니다.") }
 
         val project = projectRepository.findById(projectId)
